@@ -33,6 +33,52 @@
 //================================================== end MIXINS
 
 
+.list-tree.has-collapsable-children li.list-item {
+    // margin-left: 5px;
+}
+.directory .list-tree li.list-item,
+.directory .list-tree li.list-nested-item > .list-item {
+    line-height: 20px;
+}
+.directory .list-tree li.list-item.of-hovered:before {
+    // background: none;
+    height: 20px;
+}
+.directory .list-group .selected:before,
+.directory .list-tree .selected:before {
+    background: url(atom://wx-coda-ui/img/selected_back.png) repeat-x;
+    height: 20px;
+}
+.directory > .list-item > .name {
+    font-weight: bold;
+}
+.list-tree .directory .selected.list-item .name {
+    color: white;
+    font-size: 1em;
+}
+.icon-x:before {
+    background-image: url(atom://wx-coda-ui/img/dark_x.png);
+    font-size: 0;
+    margin-top: -2px;
+    vertical-align: middle;
+}
+.icon-x:hover:before {
+    background-image: url(atom://wx-coda-ui/img/dark_x_light_shadow.png);
+}
+
+.list-tree.has-collapsable-children .list-nested-item > .list-item::before,
+.list-tree.has-collapsable-children .list-nested-item.collapsed > .list-item::before {
+    background-image: url(atom://wx-coda-ui/img/arrow_right.png);
+    font-size: 0;
+    height: 13px;
+    vertical-align: middle;
+    width: 17px;
+}
+
+.list-tree.has-collapsable-children .list-nested-item > .list-item::before {
+    background-image: url(atom://wx-coda-ui/img/arrow_down.png);
+}
+
 .tree-view {
 	font-size: @font-size;
 
@@ -146,6 +192,19 @@
 .list-group li.directory.list-nested-item.status-added > .list-item,
 .list-tree li.directory.list-nested-item.status-added > .list-item {
 	color: @text-color;
+}
+
+.directory .icon-file-directory:before {
+    background-image: url(atom://wx-coda-ui/img/folder.png);
+    conten: '';
+    font-family: Arial;
+    font-size: 0;
+    margin-top: -2px;
+    vertical-align: middle;
+}
+
+.directory.expanded > .list-item > .icon-file-directory:before {
+    background-image: url(atom://wx-coda-ui/img/folder_open.png);
 }
 
 .expanded.status-modified .header.list-item:before,
