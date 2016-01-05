@@ -1,6 +1,6 @@
 @import "ui-variables";
 
-@height__list-item: @tab-height;
+@height__list-item: 20px;
 
 // start MIXINS ==================================================
 
@@ -34,7 +34,7 @@
 
 
 .list-tree.has-collapsable-children li.list-item {
-    // margin-left: 5px;
+    margin-left: 19px;
 }
 .directory .list-tree li.list-item,
 .directory .list-tree li.list-nested-item > .list-item {
@@ -71,12 +71,16 @@
     background-image: url(atom://wx-coda-ui/img/arrow_right.png);
     font-size: 0;
     height: 13px;
+    margin-right: 2px;
     vertical-align: middle;
     width: 17px;
 }
 
 .list-tree.has-collapsable-children .list-nested-item > .list-item::before {
     background-image: url(atom://wx-coda-ui/img/arrow_down.png);
+}
+.list-tree.has-collapsable-children .list-nested-item.expanded > .list-item::before {
+    margin: 0 1px;
 }
 
 .tree-view {
@@ -106,7 +110,7 @@
 
 	&:focus {
 		.selected:before {
-			background: @background-color-selected;
+            background: @background-color-selected url(atom://wx-coda-ui/img/selected_back.png) repeat-x;
 		}
 
 		// Change border color of git status on folders when selected
